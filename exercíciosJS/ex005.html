@@ -11,7 +11,7 @@
     </style>
 </head>
 <body>
-    <h1>Os homens mais ricos do mundo</h1>
+    <h1>Os homens mais pobres do mundo</h1>
     <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo cumque quas, asperiores reprehenderit, inventore minus at officiis voluptatibus dolor ipsam et voluptas quae libero recusandae. Labore eos blanditiis corporis itaque veniam magni vel quisquam, voluptates ab aliquid asperiores porro totam minima, incidunt cumque iure, quam laudantium nihil soluta sequi! Voluptatem, quisquam? Tempore nam dolorum nisi sit veniam asperiores quaerat eum perspiciatis voluptate nulla atque ducimus dolore quae iste sed consequatur officia eaque architecto, amet sint numquam, cum exercitationem. Dolorum molestiae eum optio blanditiis vel ullam quo rerum nemo velit asperiores, ut, quis dolor voluptas maxime alias minus dicta voluptatem at accusantium harum similique assumenda officia laborum! Inventore quos libero, sed sit perspiciatis adipisci, modi iure ad explicabo, amet laboriosam in.
     </p>
@@ -23,14 +23,30 @@
     </p>
 
    <script>
-    var n1 = prompt("Digite um número");
-    n1 = parseInt(n1);
+        var notamedia = prompt("Informe-nos qual a média de sua escola para passar de ano. Quando aparecer 'false', significa que você não foi aprovado, e se aparecer 'true', significa que você foi aprovado.");
+       notamedia = parseInt(notamedia);
 
-    var n2 = prompt("Digite mais outro número");
-    n2 = parseInt(n2);
+       var notamat1 = prompt("Qual foi sua nota final de Matemática no primeiro bimestre? Use ponto caso haja número quebrado");
+       notamat1 = parseFloat(notamat1);
 
-    alert("O resto da divisão de " + n1 + " e " + n2 + " é: " + (n1 % n2));
-    alert("O número " + n1 + " elevado a " + n2 + " é igual a " + (n1 ** n2));
+       var notamat2 = prompt("E no segundo? Use ponto caso haja número quebrado");
+       notamat2 = parseFloat(notamat2);
+
+       var notamat3 = prompt("E no terceiro? Use ponto caso haja número quebrado");
+       notamat3 = parseFloat(notamat3);
+
+       var notamat4 = prompt("E no quarto? Use ponto caso haja número quebrado");
+       notamat4 = parseFloat(notamat4);
+
+       
+
+       var resultmat = (notamat1 + notamat2 + notamat3 + notamat4) / 4;
+       resultmat = parseFloat(resultmat);
+
+       alert("Sua média dos últimos 4 bimestres em matemática foi de " + resultmat + ", logo, você está aprovado?..."  );
+
+
+       alert(resultmat >= notamedia);
    </script>
 </body>
 </html>
