@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteio</title>
+</head>
+<body>
+    <script>
+        var jg1 = prompt("Qual seu nome jogador 1?");
+
+        var n1 = prompt(jg1 + ", " + "digite um Número");
+        n1 = parseFloat(n1);
+
+        var jg2 = prompt("Qual seu nome joador 2?")
+        
+        var n2 = prompt(jg2 + ", " + " digite um número");
+        n2 = parseFloat(n2);
+
+        if(n1 == n2){
+            alert("Empate! Os números foram: " + n1 + " e " + n2);
+        }
+
+        var number = parseInt(Math.random() * 2);
+
+       if(number == 0){
+            if(n1 < n2 ){
+                alert("O Jogador " + jg1 + " ganhou. Pois escolheu o menor número. Já que o número sorteado foi " + number);
+            }
+            else{
+                alert("O jogador " + jg2 + " ganhou. Pois escolheu o menor número. Já que o número sorteado foi " + number);
+            }
+       }
+       else{
+           if(n1 > n2){
+            alert("O Jogador " + jg1 + " ganhou. Pois escolheu o maior número. Já que o número sorteado foi " + number);
+           }
+           else{
+            alert("O Jogador " + jg2 + " ganhou. Pois escolheu o maior número. Já que o número sorteado foi " + number);
+           }
+       }
+    </script>
+</body>
+</html>

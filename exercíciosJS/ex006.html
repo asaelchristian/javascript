@@ -3,13 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notas</title>
+    <title>Revelação de notas</title>
 </head>
 <body>
     
 
     <script>
-        
+     var media = prompt("Qual é a média de sua escola para passar de ano?");
+     media = parseInt(media);
+
+     var nota1 = prompt("Qual foi sua nota final no primeiro bimestre? Use ponto caso haja número quebrado.");
+     nota1 = parseFloat(nota1);
+
+     var nota2 = prompt("E no segundo bimestre?");
+     nota2 = parseFloat(nota2);
+
+     var nota3 = prompt("E no terceiro?");
+     nota3 = parseFloat(nota3);
+
+     var nota4 = prompt("E no quarto?");
+     nota4 = parseFloat(nota4);
+
+     var total = (nota1 + nota2 + nota3 + nota4) / 4;
+
+     if(total >= media){
+        alert("Parabéns! Você passou de ano. Sua nota final foi " + total + ". Aproveite suas férias :)" )
+     }
+     else{
+        alert("Que pena! Você ficou de recuperação. Sua nota final foi de " + total + "." )
+     }
     </script>
 </body>
 </html>
