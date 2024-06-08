@@ -7,38 +7,40 @@
 </head>
 <body>
     <script>
-        var jg1 = prompt("Qual seu nome jogador 1?");
+      var nome1 =  prompt("Qual seu nome?");
+      
+      var n1 = prompt(nome1 + ", Digite um número.");
+      n1 = parseFloat(n1);
 
-        var n1 = prompt(jg1 + ", " + "digite um Número");
-        n1 = parseFloat(n1);
+      var nome2 =  prompt("Qual seu nome?");
+      
+      var n2 = prompt(nome2 + ", Digite um número.");
+      n2 = parseFloat(n2);
 
-        var jg2 = prompt("Qual seu nome joador 2?")
-        
-        var n2 = prompt(jg2 + ", " + " digite um número");
-        n2 = parseFloat(n2);
 
-        if(n1 == n2){
-            alert("Empate! Os números foram: " + n1 + " e " + n2);
-        }
+      if(n1 == n2){
+        alert("Empate. Os números selcionados foram os mesmos.")
+      }
 
-        var number = parseInt(Math.random() * 2);
+      var sorteado = parseInt(Math.random() * 2);
 
-       if(number == 0){
-            if(n1 < n2 ){
-                alert("O Jogador " + jg1 + " ganhou. Pois escolheu o menor número. Já que o número sorteado foi " + number);
-            }
-            else{
-                alert("O jogador " + jg2 + " ganhou. Pois escolheu o menor número. Já que o número sorteado foi " + number);
-            }
-       }
-       else{
-           if(n1 > n2){
-            alert("O Jogador " + jg1 + " ganhou. Pois escolheu o maior número. Já que o número sorteado foi " + number);
+      if(sorteado == 0){
+           if(n1 < n2){
+                alert(nome1 + "ganhou. Pois escolheu o menor número, já que o número sorteado foi " + sorteado);
            }
            else{
-            alert("O Jogador " + jg2 + " ganhou. Pois escolheu o maior número. Já que o número sorteado foi " + number);
+            alert(nome2 + " ganhou. Pois escolheu o menor número, já que o número sorteado foi " + sorteado);
            }
-       }
+      }
+      else{
+        if(n1 > n2){
+            alert(nome1 + " ganhou. Pois escolheu o maior número, já que o número sorteado foi " + sorteado);
+        }
+        else{
+            alert(nome2 + " ganhou. Pois escolheu o maior número, já que o número sorteado foi " + sorteado);
+        }
+      }
+      
     </script>
 </body>
 </html>
