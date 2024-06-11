@@ -7,40 +7,36 @@
 </head>
 <body>
     <script>
-      var nome1 =  prompt("Qual seu nome?");
-      
-      var n1 = prompt(nome1 + ", Digite um número.");
+      var player1 = prompt("Qual seu nome?");
+      var n1 = prompt(player1 + ", digite um número.");
       n1 = parseFloat(n1);
 
-      var nome2 =  prompt("Qual seu nome?");
-      
-      var n2 = prompt(nome2 + ", Digite um número.");
+      var player2 = prompt("Qual seu nome?");
+      var n2 = prompt(player2 + ", digite um número.");
       n2 = parseFloat(n2);
 
-
       if(n1 == n2){
-        alert("Empate. Os números selcionados foram os mesmos.")
+        alert("Empate. Os números foram iguais.");
       }
 
       var sorteado = parseInt(Math.random() * 2);
 
       if(sorteado == 0){
-           if(n1 < n2){
-                alert(nome1 + "ganhou. Pois escolheu o menor número, já que o número sorteado foi " + sorteado);
+        if(n1 < n2){
+            alert(player1 + "ganhou. Pois escolheu o menor número.");
            }
            else{
-            alert(nome2 + " ganhou. Pois escolheu o menor número, já que o número sorteado foi " + sorteado);
+            alert(player2 + " ganhou. Pois escolheu o menor número.");
            }
       }
       else{
         if(n1 > n2){
-            alert(nome1 + " ganhou. Pois escolheu o maior número, já que o número sorteado foi " + sorteado);
+          alert(player1 + " ganhou. Pois escolheu o maior número");
         }
         else{
-            alert(nome2 + " ganhou. Pois escolheu o maior número, já que o número sorteado foi " + sorteado);
+          alert(player2 + " ganhou. Pois escolheu o maior número");
         }
       }
-      
     </script>
 </body>
 </html>
