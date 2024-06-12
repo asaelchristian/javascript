@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade</title>
+</head>
+<body>
+    <script>
+        alert("If any of your grades are zero, you don't pass ;)");
+
+        var g1 = prompt("Student, type your first grade.");
+        g1 = parseFloat(g1);
+
+        var g2 = prompt("Now, type your second grade.");
+        g2 = parseFloat(g2);
+
+       var result = (g1 + g2) / 2;
+
+
+
+       /*Do the same result but using || (or)*/
+       if(result > 5 && g1 > 0 && g2 > 0){
+        alert("Congratulations! You passed :D");
+     }
+     else{
+        alert("Sorry, but it wasn't this time :(");
+     }
+    </script>
+</body>
+</html>
