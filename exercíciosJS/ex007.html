@@ -25,25 +25,11 @@
 
 
       /* Diminuia essas condições em apenas um único 'if' e 'else'. Com o que tu aprendeu até aqui, vc consegue */
-      if(sorteado == 0){
-        if(n1 < n2){
-            alert(player1 + "ganhou. Pois escolheu o menor número.");
-           }
-           else{
-            alert(player2 + " ganhou. Pois escolheu o menor número.");
-           }
-      if(sorteado == 0 && n1 < n2){
-        alert(player1 + "ganhou, pois escolheu o menor número.");
-      }
+      if(sorteado == 0 && n1 < n2 || sorteado == 1 && n1 > n2){
+        alert(player1 + " ganhou, pois escolheu o menor número.");
     }
       else{
-        if(n1 > n2){
-          alert(player1 + " ganhou. Pois escolheu o maior número");
-        }
-        else{
-          alert(player2 + " ganhou. Pois escolheu o maior número");
-        }
-        
+        alert(player2 + " ganhou, pois escolheu o maior número.");
       }
     </script>
 </body>
