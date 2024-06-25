@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick a number</title>
+</head>
+<body>
+    <script>
+        var number = prompt("Type a number from 1 to 6");
+        number = parseInt(number);
+
+        switch(number){
+        case 1: 
+            alert("it's too small.");
+            break;
+        case 2: 
+            alert("Interesting choice.");
+            break;
+        case 3: 
+            alert("It could be better.");
+            break;
+        case 4: 
+            alert("I like it.");
+            break;
+        case 5: 
+            alert("Many people like this number.");
+            break;
+        case 6: 
+            alert("Cool!");
+            break;
+        default: 
+            alert("This number is not allowed. Just numbers from 1 to 6");
+        }
+    </script>
+</body>
+</html>

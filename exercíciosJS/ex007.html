@@ -15,8 +15,11 @@
       var n2 = prompt(player2 + ", digite um número.");
       n2 = parseFloat(n2);
 
-      if(n1 == n2){
+      if(n1 === n2){
         alert("Empate. Os números foram iguais.");
+      }
+      else{
+        
       }
 
       var sorteado = parseInt(Math.random() * 2);
@@ -26,10 +29,10 @@
 
       /* Diminuia essas condições em apenas um único 'if' e 'else'. Com o que tu aprendeu até aqui, vc consegue */
       if(sorteado == 0 && n1 < n2 || sorteado == 1 && n1 > n2){
-        alert(player1 + " ganhou, pois escolheu o menor número.");
-    }
+        alert(player1 + " ganhou.");
+      }
       else{
-        alert(player2 + " ganhou, pois escolheu o maior número.");
+        alert(player2 + " ganhou.");
       }
     </script>
 </body>
