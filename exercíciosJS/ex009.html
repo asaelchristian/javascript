@@ -9,31 +9,28 @@
     <script>
         var hero = prompt("Type here your favourite Marvel super hero");
 
-        var number = prompt("Type a number from 1 to 6");
-        number = parseInt(number);
-        var hero = prompt("Type here your favourite Marvel super hero");
-
-        switch(number){
-        case 1: 
-            alert("it's too small.");
+    switch(hero){
+        case "Spider man":
+        case "spider man":
+        case "Spider Man":
+            alert("That's a great super hero.");
             break;
-        case 2: 
-            alert("Interesting choice.");
+        case "Iron Man":
+        case "iron man":
+        case "Iron man":
+            alert("He's rich.");
             break;
-        case 3: 
-            alert("It could be better.");
+        case "Hulk":
+        case "hulk":
+            alert("He's rather angry.");
             break;
-        case 4: 
-            alert("I like it.");
+        case "Captain America":
+        case "Captain america":
+        case "captain america":
+            alert("He represents the United States.");
             break;
-        case 5: 
-            alert("Many people like this number.");
-            break;
-        case 6: 
-            alert("Cool!");
-            break;
-        default: 
-            alert("This number is not allowed. Just numbers from 1 to 6");
+        default:
+            alert("I don't know this hero.");
         }
     </script>
 </body>
