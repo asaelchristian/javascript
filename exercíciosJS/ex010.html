@@ -12,15 +12,13 @@
 </head>
 <body>
     <script>
-        var numero = prompt("Escreva aqui um número.");
-        numero = parseFloat(numero);
+        var num = prompt("Escreva aqui um número.");
+        num = parseFloat(num);
 
-        var indice = 1;
-
-        while(indice <= 100){
-            document.write(numero + " x " + indice + " = " + (numero * indice) + "<br>");
-            indice = indice + 1;
+        for(var i = 1; i <= 1000; i++){
+            document.write(num + " x " + i + " = " + (num * i) + "<br>");
         }
+        document.write("Fim do loop :)");
     </script>
 </body>
 </html>
