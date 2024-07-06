@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora louca</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1{
+            text-align: center;
+        }
+        button{
+            height: 40px;
+            width: 40px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 20px;
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: rgb(31, 28, 28);
+        }
+        #buttons{
+            height: 45px;
+            width: 500px;
+            background-color: chartreuse;
+            padding: 20px;
+            border-radius: 10px;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+        }
+        main{
+            width: 800px;
+            height: 200px;
+            background-color: aqua;
+            padding: 20px;
+            margin: auto;
+            border-radius: 20px;
+            border: 2px outset blue;
+        }
+        #resultado{
+            width: 70%;
+            height: 50px;
+            background-color: cornsilk;
+            margin: 30px auto 0px auto;
+            border-radius: 30px;
+            font-size: 2.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teste de funções JS</h1>
+    <br>
+    <main>
+        <div id="buttons">
+            <button id="som" onclick="soma()">+</button>
+            <button id="sub" onclick="subtracao()">-</button>
+            <button id="mul" onclick="multiplicacao()">x</button>
+            <button id="div" onclick="divisao()">÷</button>
+        </div>
+        <div id="resultado"></div>
+    </main>
+
+    
+    
+    <script>
+        var n = prompt("Digite um número");
+        n = parseFloat(n);
+
+        resultado.innerHTML = n;
+
+        function soma(){
+         var n1 = som.inner = prompt("Digite um número");
+         n1 = parseFloat(n1);
+         resultado.innerHTML = (n + n1);
+         var soma1 = (n + n1);
+         soma1 = parseFloat(soma1);
+         
+        }
+
+        function subtracao(){
+            var n2 = sub.inner = prompt("Digite um número");
+            n2 = parseFloat(n2);
+            resultado.innerHTML = (n - n2);
+            var subtracao1 = (n - n2);
+            subtracao1 = parseFloat(subtracao1);
+        }
+        
+        function multiplicacao(){
+            var n3 = mul.inner = prompt("Digite um número");
+            n3 = parseFloat(n3);
+            resultado.innerHTML = (n * n3);
+            var multiplicacao1 = (n * n2);
+            multiplicacao1 = parseFloat(multiplicacao1);
+        }
+        
+        function divisao(){
+            var n4 = div.inner = prompt("Digite um número");
+            n4 = parseFloat(n4);
+            resultado.innerHTML = (n / n4);
+            var divisao1 = (n / n2);
+            divisao1 = parseFloat(divisao1);
+        }
+    </script>
+</body>
+</html>

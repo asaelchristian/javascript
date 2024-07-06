@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolhas</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="criarTabuada()">Criar Tabuada</button>
+    <button onclick="limparTabuada()">Limpar Tabuada</button>
+    <div id="container"></div>
+
+    <script>
+        function criarTabuada(){
+            var n = prompt("Digite um número");
+            n = parseFloat(n);
+
+            var mensagem = ""
+
+            for(var i =  1; i <= 1000; i++){
+               mensagem = mensagem + n + " x " + i + " = " + (n * i) + "<br>";
+            }
+
+            container.innerHTML = mensagem;
+        }
+
+        function limparTabuada(){
+            mensagem = ""
+            container.innerHTML = mensagem
+        }   
+    </script>
+</body>
+</html>
