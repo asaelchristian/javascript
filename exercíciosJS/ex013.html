@@ -51,6 +51,14 @@
             border-radius: 30px;
             font-size: 2.5em;
         }
+        #resultado2{
+            width: 70%;
+            height: 50px;
+            background-color: cornsilk;
+            margin: 30px auto 0px auto;
+            border-radius: 30px;
+            font-size: 2.5em;
+        }
     </style>
 </head>
 <body>
@@ -63,7 +71,11 @@
             <button id="mul" onclick="multiplicacao()">x</button>
             <button id="div" onclick="divisao()">÷</button>
         </div>
-        <div id="resultado"></div>
+       <div id="resultado">
+            <div id="resultado2">
+
+            </div>
+       </div>
     </main>
 
     
@@ -72,30 +84,28 @@
         var n = prompt("Digite um número");
         n = parseFloat(n);
 
+
         resultado.innerHTML = n;
+        
 
         function soma(){
-         var n1 = som.inner = prompt("Digite um número");
-         n1 = parseFloat(n1);
-         resultado.innerHTML = (n + n1);
+            var x = prompt("Digite um número");
+            x = parseFloat(x);
         }
 
         function subtracao(){
-            var n2 = sub.inner = prompt("Digite um número");
-            n2 = parseFloat(n2);
-            resultado.innerHTML = (n - n2);
+            var x = prompt("Digite um número");
+            x = parseFloat(x);
         }
         
         function multiplicacao(){
-            var n3 = mul.inner = prompt("Digite um número");
-            n3 = parseFloat(n3);
-            resultado.innerHTML = (n * n3);
+            var x = prompt("Digite um número");
+            x = parseFloat(x);
         }
         
         function divisao(){
-            var n4 = div.inner = prompt("Digite um número");
-            n4 = parseFloat(n4);
-            resultado.innerHTML = (n / n4);
+            var x = prompt("Digite um número");
+            x = parseFloat(x);
         }
     </script>
 </body>
