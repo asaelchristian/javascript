@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora louca</title>
     <style>
-        body{
+    body{
             font-family: Arial, Helvetica, sans-serif;
         }
 
@@ -51,14 +51,6 @@
             border-radius: 30px;
             font-size: 2.5em;
         }
-        #resultado2{
-            width: 70%;
-            height: 50px;
-            background-color: cornsilk;
-            margin: 30px auto 0px auto;
-            border-radius: 30px;
-            font-size: 2.5em;
-        }
     </style>
 </head>
 <body>
@@ -71,11 +63,7 @@
             <button id="mul" onclick="multiplicacao()">x</button>
             <button id="div" onclick="divisao()">÷</button>
         </div>
-       <div id="resultado">
-            <div id="resultado2">
-
-            </div>
-       </div>
+       <div id="resultado"></div>
     </main>
 
     
@@ -85,17 +73,35 @@
         n = parseFloat(n);
 
 
-        resultado.innerHTML = n;
-        
+        document.getElementById("resultado").innerHTML = n
+
+
+        var valor = prompt("Digite um número");
+        valor = parseFloat(valor);
+
+
+        document.getElementById("resultado").innerHTML = valor
 
         function soma(){
             var x = prompt("Digite um número");
             x = parseFloat(x);
+            if((n + x) && !(valor + x)){
+                document.getElementById("resultado").innerHTML = (n + x);
+            }
+            else{
+                document.getElementById("resultado").innerHTML = (valor + x); 
+            }
         }
 
         function subtracao(){
             var x = prompt("Digite um número");
             x = parseFloat(x);
+            if((n - x) && !(valor - x)){
+                document.getElementById("resultado").innerHTML = (n - x);
+            }
+            else{
+                document.getElementById("resultado").innerHTML = (valor - x); 
+            }
         }
         
         function multiplicacao(){
