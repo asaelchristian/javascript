@@ -69,9 +69,39 @@
     
     
     <script>
+        var initialNumber = prompt("Digite um número");
+        initialNumber = parseFloat(initialNumber);
 
-        /*Rpeat this exercise again 1 times in the next 1 day*/
-        
+        output()
+
+        function output(){
+            resultado.innerHTML = initialNumber;
+        }
+
+        function soma(){
+            var factor = prompt("Digite um número");
+            factor = parseFloat(factor);
+            initialNumber += factor;
+            output();
+        }
+        function subtracao(){
+            var factor = prompt("Digite um número");
+            factor = parseFloat(factor);
+            initialNumber -= factor;
+            output();
+        }
+        function multiplicacao(){
+            var factor = prompt("Digite um número");
+            factor = parseFloat(factor);
+            initialNumber *= factor;
+            output();
+        }
+        function divisao(){
+            var factor = prompt("Digite um número");
+            factor = parseFloat(factor);
+            initialNumber /= factor;
+            output();
+        }
     </script>
 </body>
 </html>
