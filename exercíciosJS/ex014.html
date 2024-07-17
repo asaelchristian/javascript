@@ -61,10 +61,10 @@
     <br>
     <main>
         <div id="buttons">
-            <button id="som" onclick="calculate(soma)"><span>+</span></button>
-            <button id="sub" onclick="calculate(subtracao)"><span>-</span></button>
-            <button id="mul" onclick="calculate(multiplicacao)"><span>x</span></button>
-            <button id="div" onclick="calculate(divisao)"><span>÷</span></button>
+            <button id="som" onclick="calculate('+')"><span>+</span></button>
+            <button id="sub" onclick="calculate('-')"><span>-</span></button>
+            <button id="mul" onclick="calculate('*')"><span>x</span></button>
+            <button id="div" onclick="calculate('/')"><span>÷</span></button>
         </div>
        <div id="resultado"></div>
     </main>
@@ -81,15 +81,29 @@
             resultado.innerHTML = initialNumber;
         }
 
-        function calculate(a, su, m, d){
+        function calculate(a, s, m, d){
             var factor = prompt("Digite um número");
             factor = parseFloat(factor);
-            initialNumber += factor;
-            initialNumber -= factor;
-            initialNumber *= factor;
-            initialNumber /= factor;
-            output();
+            switch(factor){
+                case '+': 
+                    initialNumber += factor;
+                    break;
+                case '-':
+                    initialNumber -= factor;
+                    break;
+                case '*':
+                    inainitialNumber *= factor;
+                    break;
+                case '/':
+                    initialNumber /= factor;
+                    break;
+            }
         }
     </script>
 </body>
 </html>
+
+<!--initialNumber += factor;
+            initialNumber -= factor;
+            initialNumber *= factor;
+            initialNumber /= factor-->
