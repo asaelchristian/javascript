@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolução de equação de segundo grau</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button{
+            cursor: pointer;
+        }
+        #resultadoX1, #resultadoX2, #resultadoDelta{
+            background-color: black;
+            height: 30px;
+            width: 90vw;
+            margin: 20px auto 0px auto;
+            border-radius: 20px;
+            color: white;
+            font-weight: 700;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Máquina de Resolução de equação do segundo grau</h1>
+    <p>Fórmula: <strong>ax<sup>2</sup> + bx + c = 0</strong>
+    <br>
+    <p><strong>OBS:</strong> Iremos mostrar o resultado do delta, de X<sub>1</sub> (Que receberá um sinal de + na hora da resolução) e X<sub>2</sub> (Que receberá um sinal de - na hora da resolução).</p>
+    
+    <button onclick="calcular()">Calcular</button>
+    <button onclick="limpar()">Limpar Resultados</button>
+
+    <div id="resultadoDelta"></div>
+    <div id="resultadoX1"></div>
+    <div id="resultadoX2"></div>
+
+    <script>
+        function calcular(){
+            var a = prompt("Digite o valor de 'a'");
+            a = parseFloat(a);
+            
+            var b = prompt("Digite o valor de 'b'");
+            b = parseFloat(b);
+            
+            var c = prompt("Digite o valor de 'c'");
+            c = parseFloat(c);  
+
+            var delta = (b * b - 4 * a * c);
+            delta = parseFloat(delta);
+            document.getElementById("resultadoDelta").innerText = "O valor de Delta é: " + delta;
+
+            if(delta < 0){
+                alert("Não existe solução a equação, pois o valor de delta é menor que zero.");
+            }
+            else{
+                var x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                var x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                document.getElementById("resultadoX1").innerText = "O resultado final exato de X1 é: " + x1;
+                document.getElementById("resultadoX2").innerText = "O resultado final exato de X2 é: " + x2;
+            }
+        }
+        function limpar() {
+            document.getElementById("resultadoDelta").innerText = "";
+            document.getElementById("resultadoX1").innerText = "";
+            document.getElementById("resultadoX2").innerText = "";
+        }
+    </script>
+</body>
+</html>
+<!-- alert("O resultado final exato de X1 é: " + x1);
+                alert("O resultado final exato de X2 é: " + x2);-->
