@@ -37,7 +37,15 @@
     <div id="resultadoX2"></div>
 
     <script>
-        function calcular(){
+        function truncateToThreeChars(num) {
+            let numStr = num.toString();
+            if (numStr.length > 3) {
+                return numStr.slice(0, 3);
+            }
+            return numStr;
+        }
+
+        function calcular() {
             var a = prompt("Digite o valor de 'a'");
             a = parseFloat(a);
             
@@ -49,18 +57,18 @@
 
             var delta = (b * b - 4 * a * c);
             delta = parseFloat(delta);
-            document.getElementById("resultadoDelta").innerText = "O valor de Delta é: " + delta;
+            document.getElementById("resultadoDelta").innerText = "O valor de Delta é: " + truncateToThreeChars(delta);
 
-            if(delta < 0){
+            if (delta < 0) {
                 alert("Não existe solução a equação, pois o valor de delta é menor que zero.");
-            }
-            else{
+            } else {
                 var x1 = (-b + Math.sqrt(delta)) / (2 * a);
                 var x2 = (-b - Math.sqrt(delta)) / (2 * a);
-                document.getElementById("resultadoX1").innerText = "O resultado final exato de X1 é: " + x1;
-                document.getElementById("resultadoX2").innerText = "O resultado final exato de X2 é: " + x2;
+                document.getElementById("resultadoX1").innerText = "O resultado final exato de X1 é: " + truncateToThreeChars(x1);
+                document.getElementById("resultadoX2").innerText = "O resultado final exato de X2 é: " + truncateToThreeChars(x2);
             }
         }
+
         function limpar() {
             document.getElementById("resultadoDelta").innerText = "";
             document.getElementById("resultadoX1").innerText = "";
@@ -69,5 +77,3 @@
     </script>
 </body>
 </html>
-<!-- alert("O resultado final exato de X1 é: " + x1);
-                alert("O resultado final exato de X2 é: " + x2);-->
