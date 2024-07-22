@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculation</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="showResultInAlert()">Calculate by showing the result in an <strong>alert</strong></button>
+    <button onclick="showResultInScreen()">Calculate by showing the result in the <strong>screen</strong></button>
+    <div id="output"></div>
+
+
+    <script>
+        function showResultInAlert(){
+            var width = prompt("Type here the width of the retangle");
+            width = parseFloat(width);
+            var height = prompt("Type here the height of the retangle");
+            height = parseFloat(height);
+            var area = calculateArea(width, height);
+            alert("The value is: " + area);
+        }
+
+        function showResultInScreen(){
+            var width = prompt("Type here the width of the retangle");
+            width = parseFloat(width);
+            var height = prompt("Type here the height of the retangle");
+            height = parseFloat(height);
+            var area = calculateArea(width, height);
+            document.querySelector("#output").innerHTML = "The value is: " + area;
+        }
+
+        function calculateArea(width, height){
+           return width * height;
+        }
+    </script>
+</body>
+</html>

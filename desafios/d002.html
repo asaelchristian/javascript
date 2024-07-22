@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculos de áreas de figuras geométricas</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button{
+            cursor: pointer;
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Figuras Geométricas</h1>
+    <p>Escolha uma opção, e então, preencha os dados. Sempre use ponto ao invés de vírgula para usar em números quebrados.</p>
+    <button onclick="calcularArea('triângulo')">Calcular área do triângulo</button>
+    <button onclick="calcularArea('quadrado')">Calcular área do quadrado</button>
+    <button onclick="calcularArea('lozango')">Calcular área do lozango</button>
+    <button onclick="calcularArea('retângulo')">Calcular área do retângulo</button>
+    <button onclick="calcularArea('trapézio')">Calcular área do trapézio</button>
+    <button onclick="calcularArea('círculo')">Calcular área do círculo</button>
+
+    <script>
+        function calcularArea(area){
+             switch(area){
+                case 'triângulo':
+                    var base = prompt("Qual o valor da base?");
+                    base = parseFloat(base);
+                    
+                    var altura = prompt("Qual o valor da altura?");
+                    altura = parseFloat(altura);
+                    alert("A área deste triângulo é " + (base * altura) / 2);
+                    break;
+
+                case 'quadrado': 
+                    var lado = prompt("Qual a media do lado desse quadrado? Digite aqui apenas um dos lados");
+                    lado = parseFloat(lado);
+                    alert("A área desse quadrado é " + (lado * lado));
+                    break;
+
+                case 'lozango': 
+                    var diaginalMaior = prompt("Qual a media da diagonal menor?");
+                    diaginalMaior = parseFloat(diaginalMaior);
+                    
+                    var diaginalMenor = prompt("Qual a media da diagonal maior?");
+                    diaginalMenor = parseFloat(diaginalMenor);
+                    alert("A área desse lozango é " + (diaginalMaior * diaginalMenor) / 2);
+                    break;
+
+                case 'retângulo': 
+                    var base = prompt("Qual o valor da base?");
+                    base = parseFloat(base);
+                    
+                    var altura = prompt("Qual o valor da altura?");
+                    altura = parseFloat(altura);
+                    alert("A área deste retângulo é " + (base * altura));
+                    break;
+
+                case 'trapézio': 
+                    var baseMaior = prompt("Qual o valor da base maior?");
+                    baseMaior = parseFloat(baseMaior);
+                    
+                    var baseMenor = prompt("Qual o valor da base menor?");
+                    baseMenor = parseFloat(baseMenor);
+                    
+                    var altura = prompt("Qual a altura do trapézio?");
+                    altura = parseFloat(altura);
+
+                    var soma = (baseMaior + baseMenor);
+                    alert("A área desse trapézio é " + (soma * altura) / 2);
+                    break;
+
+                case 'círculo': 
+                var raio = prompt("Qual o valor do raio desse círculo?");
+                raio = parseFloat(raio);
+                var pi = 3.14;
+                alert("A área desse círculo é " + pi * (raio ** 2));
+                break;
+             }
+        }
+    </script>
+</body>
+</html>
