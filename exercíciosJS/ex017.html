@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora louca</title>
+    <style>
+    body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1{
+            text-align: center;
+        }
+        button{
+            height: 40px;
+            width: 40px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 20px;
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: rgb(31, 28, 28);
+        }
+        #buttons{
+            height: 45px;
+            width: 500px;
+            background-color: chartreuse;
+            padding: 20px;
+            border-radius: 10px;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+        }
+        span{
+            font-size: 2em;
+        }
+        main{
+            width: 800px;
+            height: 200px;
+            background-color: aqua;
+            padding: 20px;
+            margin: auto;
+            border-radius: 20px;
+            border: 2px outset blue;
+        }
+        #resultado{
+            width: 70%;
+            height: 50px;
+            background-color: cornsilk;
+            margin: 30px auto 0px auto;
+            border-radius: 30px;
+            font-size: 2.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teste de funções JS</h1>
+    <br>
+    <main>
+        <div id="buttons">
+            <button onclick="startCalculation('+')"><span>+</span></button>
+            <button onclick="startCalculation('-')"><span>-</span></button>
+            <button onclick="startCalculation('*')"><span>x</span></button>
+            <button onclick="startCalculation('/')"><span>÷</span></button>
+        </div>
+       <div id="resultado"></div>
+    </main>
+
+    
+    
+    <script>
+        var initialNumber1 = prompt("Digite um número");
+        initialNumber1 = parseFloat(initialNumber1);
+
+        outputWrite(initialNumber1); // <button onclick="output('initialNumber1')"><span>x</span></button>
+
+        function outputWrite(message){
+            resultado.textContent = initialNumber1; 
+        }
+
+        function startCalculation(){
+            var initialNumber2 = prompt('digite outro número');
+            initialNumber2 = parseFloat(initialNumber2); 
+        }
+
+        function calculate(symbol, initialNumber1, initialNumber2){
+
+            var calculatedNumber = null;
+
+            switch(symbol){
+                case '+':
+                    calculatedNumber = initialNumber1 + initialNumber2;
+                    break;
+                
+                case '-':
+                    calculatedNumber = initialNumber1 - initialNumber2;
+                   break;
+                
+                case '*':
+                    calculatedNumber = initialNumber1 * initialNumber2;
+                   break;
+                
+                case '/':
+                    calculatedNumber = initialNumber1 / initialNumber2;
+                  break;
+            }
+            return calculatedNumber;
+        }
+    </script>
+</body>
+</html>
