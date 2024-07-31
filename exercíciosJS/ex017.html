@@ -72,21 +72,27 @@
     
     
     <script>
-        var initialNumber1 = prompt("Digite um número");
-        initialNumber1 = parseFloat(initialNumber1);
+        
+            var initialNumber1 = prompt("Digite um número");
+            initialNumber1 = parseFloat(initialNumber1);
 
-        outputWrite(initialNumber1); // <button onclick="output('initialNumber1')"><span>x</span></button>
+            outputWrite(initialNumber1);
+  
+        function startCalculation(symbol){
+            var initialNumber2 = prompt('Digite outro número');
+            initialNumber2 = parseFloat(initialNumber2);
 
-        function outputWrite(message){
-            resultado.textContent = initialNumber1; 
+            var finalResult = calculate(symbol);
+
+            outputWrite(finalResult);
+        }
+        
+        
+            function outputWrite(message){
+            resultado.textContent = message;
         }
 
-        function startCalculation(){
-            var initialNumber2 = prompt('digite outro número');
-            initialNumber2 = parseFloat(initialNumber2); 
-        }
-
-        function calculate(symbol, initialNumber1, initialNumber2){
+        function calculate(symbol){
 
             var calculatedNumber = null;
 
@@ -107,6 +113,7 @@
                     calculatedNumber = initialNumber1 / initialNumber2;
                   break;
             }
+
             return calculatedNumber;
         }
     </script>
