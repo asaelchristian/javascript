@@ -5,117 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora louca</title>
     <style>
-    body{
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        h1{
-            text-align: center;
-        }
-        button{
-            height: 40px;
-            width: 40px;
-            background-color: black;
-            color: white;
+        .buttons{
+            padding: 5px;
+            border-radius: 20%;
             border: none;
-            border-radius: 20px;
-        }
-        button:hover{
-            cursor: pointer;
-            background-color: rgb(31, 28, 28);
-        }
-        #buttons{
-            height: 45px;
-            width: 500px;
-            background-color: chartreuse;
-            padding: 20px;
-            border-radius: 10px;
-            margin: auto;
-            display: flex;
-            justify-content: space-around;
-        }
-        span{
-            font-size: 2em;
-        }
-        main{
-            width: 800px;
-            height: 200px;
             background-color: aqua;
-            padding: 20px;
-            margin: auto;
-            border-radius: 20px;
-            border: 2px outset blue;
-        }
-        #resultado{
-            width: 70%;
-            height: 50px;
-            background-color: cornsilk;
-            margin: 30px auto 0px auto;
-            border-radius: 30px;
-            font-size: 2.5em;
         }
     </style>
-</head>
 <body>
-    <h1>Teste de funções JS</h1>
-    <br>
-    <main>
-        <div id="buttons">
-            <button onclick="startCalculation('+')"><span>+</span></button>
-            <button onclick="startCalculation('-')"><span>-</span></button>
-            <button onclick="startCalculation('*')"><span>x</span></button>
-            <button onclick="startCalculation('/')"><span>÷</span></button>
-        </div>
-       <div id="resultado"></div>
-    </main>
-
+    <button class="buttons" onclick='iniciarCalculo("+")'>+</button>
+    <button class="buttons" onclick='iniciarCalculo("-")'>-</button>
+    <button class="buttons" onclick='iniciarCalculo("*")'>*</button>
+    <button class="buttons" onclick='iniciarCalculo("/")'>/</button>
+    
+    <div id= 'resultado'></div>
     
     
     <script>
         
-            var initialNumber1 = prompt("Digite um número");
-            initialNumber1 = parseFloat(initialNumber1);
-
-            outputWrite(initialNumber1);
-  
-        function startCalculation(symbol){
-            var initialNumber2 = prompt('Digite outro número');
-            initialNumber2 = parseFloat(initialNumber2);
-
-            var finalResult = calculate(symbol);
-
-            outputWrite(finalResult);
+        var resultado= document.querySelector('#resultado');
+        var n2= parseFloat(prompt('digite um número'));
+        
+        output(n2);
+        
+        function iniciarCalculo(simbolo){
+            var n1= document.querySelector('#resultado').textContent;
+            
+            var n2= parseFloat(prompt('digite outro número'));
+            
+            var msg= calcular(simbolo, n1, n2);
+            
+            output (msg);
+            
+            
+            
+            
         }
         
         
-            function outputWrite(message){
-            resultado.textContent = message;
+        function output(mensagem){
+            resultado.innerHTML= mensagem
         }
-
-        function calculate(symbol){
-
-            var calculatedNumber = null;
-
-            switch(symbol){
-                case '+':
-                    calculatedNumber = initialNumber1 + initialNumber2;
-                    break;
+        
+        
+        function calcular(simbolo, n1, n2){
+            
+            var numeroCalculado= null;
+            
+            
+            switch(simbolo){
                 
-                case '-':
-                    calculatedNumber = initialNumber1 - initialNumber2;
-                   break;
+                case "+":
+                numeroCalculado= parseFloat(n1) + parseFloat(n2);
+                break;
                 
-                case '*':
-                    calculatedNumber = initialNumber1 * initialNumber2;
-                   break;
+                case "-":
+                numeroCalculado= n1 - n2;
+                break;
                 
-                case '/':
-                    calculatedNumber = initialNumber1 / initialNumber2;
-                  break;
+                case "*":
+                numeroCalculado= n1 * n2;
+                break;
+                
+                case "/":
+                numeroCalculado= n1/n2;
+                
             }
-
-            return calculatedNumber;
+            
+            
+            return numeroCalculado;
+                
+                
         }
+            
+        
     </script>
+
+
 </body>
 </html>
