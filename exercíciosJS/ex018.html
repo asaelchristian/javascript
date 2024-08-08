@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora louca</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2em;
+        }
+        .buttons{
+            padding: 13px;
+        }
+    </style>
+<body>
+    <button class="buttons" onclick='iniciarCalculo("+")'>+</button>
+    <button class="buttons" onclick='iniciarCalculo("-")'>-</button>
+    <button class="buttons" onclick='iniciarCalculo("*")'>X</button>
+    <button class="buttons" onclick='iniciarCalculo("/")'>/</button>
+    
+    <div id="resultado"></div>
+    
+    
+    <script>
+        
+        var resultado= document.querySelector('#resultado');
+        var n2= parseFloat(prompt('digite um número'));
+        
+        output(n2);
+        
+        function iniciarCalculo(simbolo){
+            var n1= document.querySelector('#resultado').textContent;
+            n1 = parseFloat(n1);
+            
+            var n2= parseFloat(prompt('digite outro número'));
+            
+            try{
+            var msg = calcular(simbolo, n1, n2);
+        }
+          catch(e){
+           alert(e.message);
+           return;
+        }
+            
+            output (msg);
+        }
+        
+        
+        function output(mensagem){
+            resultado.innerHTML= mensagem
+        }
+        
+        
+        function calcular(simbolo, n1, n2){
+
+            if(isNaN(n1) || isNaN(n2)){
+                throw new Error("Só são aceitos números");
+            }
+            
+            var numeroCalculado= null;
+            
+            
+            switch(simbolo){
+                
+                case "+":
+                numeroCalculado= parseFloat(n1) + parseFloat(n2);
+                break;
+                
+                case "-":
+                numeroCalculado= n1 - n2;
+                break;
+                
+                case "*":
+                numeroCalculado= n1 * n2;
+                break;
+                
+                case "/":
+                numeroCalculado= n1/n2;
+                
+            }
+            
+            
+            return numeroCalculado;
+                
+                
+        }
+            
+        
+    </script>
+
+
+</body>
+</html>

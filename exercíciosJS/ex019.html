@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do retângulo</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #campo-resultado{
+            background-color: black;
+            height: 50px;
+            width: 300px;
+            display: inline-block;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        button{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="campo-resultado"></div>
+    <br>
+    <br>
+    <button onclick="reiniciarCalculo()">Fazer o cálculo novamente</button>
+
+
+    <script>
+
+        // adicione os blocos try e catch()
+           var base = prompt("Digite a base do retângulo");
+           base = parseFloat(base);
+
+           var altura = prompt("Digite a altura do retângulo");
+           altura = parseFloat(altura);
+
+           var resultadoArea = (base * altura);
+           
+           if(isNaN(base) || isNaN(altura)){
+            document.querySelector("#campo-resultado").textContent = "Dados inválidos. Somente números são aceitos."
+        }
+           else{
+            document.querySelector("#campo-resultado").textContent = resultadoArea;
+        }
+        
+        
+        function reiniciarCalculo(){
+            var base = prompt("Digite a base do retângulo");
+            base = parseFloat(base);
+
+           var altura = prompt("Digite a altura do retângulo");
+           altura = parseFloat(altura);
+
+           var resultadoArea = (base * altura);
+
+           if(isNaN(base) || isNaN(altura)){
+            document.querySelector("#campo-resultado").textContent = "Somente números são aceitos. Estou de olho em você."
+        }
+
+          else{
+            document.querySelector("#campo-resultado").textContent = resultadoArea;
+        } 
+        }
+    </script>
+</body>
+</html>
