@@ -39,15 +39,11 @@
            altura = parseFloat(altura);
 
            var resultadoArea = (base * altura);
-           
-           if(isNaN(base) || isNaN(altura)){
-            document.querySelector("#campo-resultado").textContent = "Dados inválidos. Somente números são aceitos."
-        }
-           else{
-            document.querySelector("#campo-resultado").textContent = resultadoArea;
-        }
+
+           condicao();
         
-        
+
+    
         function reiniciarCalculo(){
             var base = prompt("Digite a base do retângulo");
             base = parseFloat(base);
@@ -57,13 +53,18 @@
 
            var resultadoArea = (base * altura);
 
-           if(isNaN(base) || isNaN(altura)){
+           condicao();
+         
+        }
+
+        function condicao(){
+            if(isNaN(base) || isNaN(altura)){
             document.querySelector("#campo-resultado").textContent = "Somente números são aceitos. Estou de olho em você."
         }
 
           else{
             document.querySelector("#campo-resultado").textContent = resultadoArea;
-        } 
+        }
         }
     </script>
 </body>
