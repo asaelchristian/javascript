@@ -30,41 +30,34 @@
 
 
     <script>
+        calcularArea();
 
-        // adicione os blocos try e catch()
-           var base = prompt("Digite a base do retângulo");
-           base = parseFloat(base);
+        function calcularArea() {
+            try {
+                var base = prompt("Digite a base do retângulo");
+                base = parseFloat(base);
 
-           var altura = prompt("Digite a altura do retângulo");
-           altura = parseFloat(altura);
+                var altura = prompt("Digite a altura do retângulo");
+                altura = parseFloat(altura);
 
-           var resultadoArea = (base * altura);
+                var resultadoArea = base * altura;
 
-           condicao();
-        
+                if (isNaN(base) || isNaN(altura)) {
+                    throw new Error("Só números são possíveis de serem calculados.");
+                }
+                else{
+                   document.querySelector("#campo-resultado").textContent = "Área: " + resultadoArea;
+                }
 
-    
-        function reiniciarCalculo(){
-            var base = prompt("Digite a base do retângulo");
-            base = parseFloat(base);
 
-           var altura = prompt("Digite a altura do retângulo");
-           altura = parseFloat(altura);
-
-           var resultadoArea = (base * altura);
-
-           condicao();
-         
+            } 
+            catch (e) {
+                document.querySelector("#campo-resultado").textContent = "Erro: " + e.message;
+            }
         }
 
-        function condicao(){
-            if(isNaN(base) || isNaN(altura)){
-            document.querySelector("#campo-resultado").textContent = "Somente números são aceitos. Estou de olho em você."
-        }
-
-          else{
-            document.querySelector("#campo-resultado").textContent = resultadoArea;
-        }
+        function reiniciarCalculo() {
+            calcularArea();
         }
     </script>
 </body>
