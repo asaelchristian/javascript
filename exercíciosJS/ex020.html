@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos da compra</title>
+    <style>
+        #output{
+            background-color: black;
+            height: 300px;
+            color: white;
+            padding: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+        const produtos = ["Banana", "Maçã", "Goiaba", "Pepino", "Coco", "Maracujá", "Óleo", "Laranja", "Limão", "Manga"];
+
+        produtos.push("Morango", "Melencia");
+
+        var output = document.getElementById("output");
+
+        var mensagem = "";
+
+        for (var i = 0; i < produtos.length; i++) {
+            mensagem += "Produto " + (i + 1) + ": " + produtos[i] + "<br>";
+        }
+
+        output.innerHTML = mensagem;
+    </script>
+</body>
+</html>
