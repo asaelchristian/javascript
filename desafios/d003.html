@@ -46,32 +46,37 @@
             c = parseFloat(c);
  
         try{
-            if(isNaN(a) === false && isNaN(b) === false && isNaN(c) === false){
-                throw new Error("Tem que haver pelo menos uma icógnita");
-            }
+                if(isNaN(a) === false && isNaN(b) === false && isNaN(c) === false){
+                throw new Error("Tem que haver pelo menos uma icógnita.");
+                }
+                
+                if(isNaN(a) === true && isNaN(b) === true && isNaN(c) === true || isNaN(a) === true && isNaN(b) === true && isNaN(c) === false || isNaN(a) === true && isNaN(b) === false && isNaN(c) === true || isNaN(a) === false && isNaN(b) === true && isNaN(c) === true){
+                throw new Error("Tem que haver pelo menos dois números.")
+                }
 
-            if(a < b || a < c){
+                if(a < b || a < c){
                 throw new Error("Valor da hipotenusa inválido. Ela é sempre a que tem a maior medida.");
-            }
+                }
 
-            if(isNaN(a) === true && isNaN(b) === false && isNaN(c) === false){
+
+                if(isNaN(a) === true && isNaN(b) === false && isNaN(c) === false){
                    var resultadoA = (b**2) + (c**2);
                    document.getElementById("resultado-calculo").textContent = ("O resultado da Hipotenusa é: " + Math.sqrt(resultadoA));
-            }
+                }
 
-            if(isNaN(a) === false && isNaN(b) === false && isNaN(c) === true){
+                if(isNaN(a) === false && isNaN(b) === false && isNaN(c) === true){
                 var resultadoA = (a**2);
                 var resultadoB = (b**2);
                 var resultadoC = resultadoA - resultadoB;
                 document.getElementById("resultado-calculo").textContent = ("O resultado do Cateto Adjacente é: " + Math.sqrt(resultadoC));
-            }
+               }
 
-            if(isNaN(a) === false && isNaN(b) === true && isNaN(c) === false){
+                if(isNaN(a) === false && isNaN(b) === true && isNaN(c) === false){
                 var resultadoA = (a**2);
                 var resultadoC = (c**2);
                 var resultadoB = resultadoA - resultadoC;
                 document.getElementById("resultado-calculo").textContent = ("O resultado do Cateto Oposto é " + Math.sqrt(resultadoB));
-            }
+                }
         }
         catch(e){
             alert(e.message);
