@@ -32,9 +32,11 @@
     <button onclick="calcular()">Calcular</button>
     <button onclick="limpar()">Limpar Resultados</button>
 
-    <div id="resultadoDelta"></div>
-    <div id="resultadoX1"></div>
-    <div id="resultadoX2"></div>
+    <section id="outputs">
+        <div id="resultadoDelta"></div>
+        <div id="resultadoX1"></div>
+        <div id="resultadoX2"></div>
+    </section>
 
     <script>
         function truncateToThreeChars(num) {
@@ -55,18 +57,33 @@
             var c = prompt("Digite o valor de 'c'");
             c = parseFloat(c);  
 
+            try{
             var delta = (b * b - 4 * a * c);
             delta = parseFloat(delta);
             document.getElementById("resultadoDelta").innerText = "O valor de Delta é: " + truncateToThreeChars(delta);
 
             if (delta < 0) {
-                alert("Não existe solução a equação, pois o valor de delta é menor que zero.");
-            } else {
+                throw new Error("Não existe solução a equação, pois o valor de delta é menor que zero.");
+            } 
+            else {
                 var x1 = (-b + Math.sqrt(delta)) / (2 * a);
                 var x2 = (-b - Math.sqrt(delta)) / (2 * a);
                 document.getElementById("resultadoX1").innerText = "O resultado final exato de X1 é: " + truncateToThreeChars(x1);
                 document.getElementById("resultadoX2").innerText = "O resultado final exato de X2 é: " + truncateToThreeChars(x2);
             }
+            if(a == 0 || b == 0 || c == 0){
+                throw new Error("Valores não válidos para a resolução do cálculo.");
+            }
+            if(isNaN(a) === true || isNaN(b) === true || isNaN(c) === true){
+                throw new Error("Valores inválidos. 'a', 'b' e 'c' precisam ser números.")
+            }
+        }
+        catch(error){
+           alert(error.message);
+           document.getElementById("resultadoDelta").innerText = "";
+           document.getElementById("resultadoX1").textContent = "";
+           document.getElementById("resultadoX2").textContent = "";
+        }
         }
 
         function limpar() {
