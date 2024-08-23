@@ -7,12 +7,26 @@
 </head>
 <body>
     <script>
-        var array = new Array(25, 30, 45, 28, 0, 12, 78, 64);
+        const array = [25, 30, 45, 28, 0, 12, 78, 64];
 
-       // pares da array: 30, 28, 0, 12, 78, 64
-       var pares = array[1] + array[3] + array[4] + array[5] + array[6] + array[7];
+        var soma = 0;
+        for (var i = 0; i < array.length; i++) {
+            console.log(i);
+            console.log(array[i]);
 
-        alert("O resultado da soma dos números pares da array é: " + pares);
+            if (array[i] % 2 == 0) {
+                soma += array[i];
+                alert("O resultado da soma dos números pares da array é: " + soma);
+            }   
+        }
+       
+       
+       
+       
+       
+       
+       
+        // pares da array: 30, 28, 0, 12, 78, 64 = 212
     </script>
 </body>
 </html>
