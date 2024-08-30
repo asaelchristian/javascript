@@ -7,27 +7,22 @@
 </head>
 <body>
     <script>
-        const array = [25, 30, 45, 28, 0, 12, 78, 64];
+        const array = [89, 45, 22, 32, 8, 4]; 
 
-        var soma = array[i] + array[i];
-        
-        for (var i = 0; i < array.length; i++) {
-            if(array[i] % 2 == 0) {
-                for (let index = 0; index < array.length; array++) {
-                    
-                    
-                }
-                console.log(array[i]);
+        var somaDosPares = somaOsPares(array);
+        alert("A soma dos números pares da array é: " + somaDosPares);
+
+        function somaOsPares(array){
+            var soma = 0;
+            for (var i = 0; i < array.length; i++) {
+                    if (array[i] % 2 == 0) {
+                        soma = soma + array[i];
+                    }
             }
+
+            return soma;
+       
         }
-       
-       
-       
-       
-       
-       
-       
-        // pares da array: 30, 28, 0, 12, 78, 64 = 212
     </script>
 </body>
 </html>

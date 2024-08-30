@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadro dos funcionários e gerentes</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button{
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        div{
+            height: 900px;
+            width: 280px;
+            padding: 20px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Organização dos funcionários e gerentes da Ford Brasil</h1>
+
+    <button onclick="quadroDeTI()">Ver quadro dos funcionários do setor de TI</button>
+    <button onclick="quadroDeADM()">Ver quadro dos funcionários do setor de Administração</button>
+    <button onclick="quadroDeJuridicos()">Ver quadro dos funcionários do setor Jurídico</button>
+    <button onclick="quadroDeGerentes()">Ver o quadro de gerentes</button>
+ 
+
+    <div id="ti"></div>
+    
+    
+    <script>
+        const funcionariosTI = [ 
+            "João", "Maria", 
+            "Pedro", "Ana", 
+            "Carlos", "Juliana", 
+            "Lucas", "Camila", 
+            "Gabriel", "Larissa", 
+            "Rafael", "Fernanda", 
+            "Bruno", "Patrícia"];
+
+        const funcionariosADM = [
+            "Daniel", "Carolina", 
+            "Gustavo", "Beatriz", 
+            "Felipe", "Gabriela", 
+            "Thiago", "Mariana", 
+            "Leonardo", "Renata", 
+            "Eduardo", "Vanessa", 
+            "Marcelo", "Bianca", 
+            "Ricardo", "Aline", 
+            "André", "Rafaela", 
+            "Rodrigo", "Priscila", 
+            "Alexandre", "Thaís", 
+            "Matheus", "Tatiana", 
+            "Vinícius", "Amanda", 
+            "Vitor", "Isabela"];
+
+            const funcionariosJuridicos = [ 
+            "Henrique", "Bruna", 
+            "Fábio", "Luísa", 
+            "Diego", "Débora", 
+            "Antônio", "Simone"];
+
+            const gerentes = ["Jonny", "Sasha", "Oregon", "Asael", "Danny"];
+
+        function quadroDeTI(){
+            for (var i = 0; i < funcionariosTI.length; i++) {
+            document.getElementById("ti").textContent = i;
+            }
+        }
+
+        function quadroDeADM(){
+            for (let i = 0; i < funcionariosADM.length; i++) {
+                document.getElementById("adm").textContent = funcionariosADM[i] + "<br>";
+            }
+        }
+
+    </script>
+</body>
+</html>
+
+<!--<div id="adm"></div>
+    <div id="juridicos"></div>
+    <div id="gerentes"></div>-->
