@@ -14,23 +14,28 @@
         }
         div{
             height: 900px;
-            width: 280px;
+            width: 230px;
             padding: 20px;
-            background-color: black;
+            background-color: rgb(255, 255, 255);
             color: white;
+            border-radius: 8px;
+            display: inline-block;
         }
     </style>
 </head>
 <body>
     <h1>Organização dos funcionários e gerentes da Ford Brasil</h1>
 
-    <button onclick="quadroDeTI()">Ver quadro dos funcionários do setor de TI</button>
-    <button onclick="quadroDeADM()">Ver quadro dos funcionários do setor de Administração</button>
-    <button onclick="quadroDeJuridicos()">Ver quadro dos funcionários do setor Jurídico</button>
-    <button onclick="quadroDeGerentes()">Ver o quadro de gerentes</button>
+    <button onclick="quadrosDaEmpresa('ti')">Ver quadro dos funcionários do setor de TI</button>
+    <button onclick="quadrosDaEmpresa('adm')">Ver quadro dos funcionários do setor de Administração</button>
+    <button onclick="quadrosDaEmpresa('juridicos')">Ver quadro dos funcionários do setor Jurídico</button>
+    <button onclick="quadrosDaEmpresa('gerentes')"> Ver o quadro de gerentes</button>
  
 
     <div id="ti"></div>
+    <div id="adm"></div>
+    <div id="juridicos"></div>
+    <div id="gerentes"></div>
     
     
     <script>
@@ -38,7 +43,7 @@
             "João", "Maria", 
             "Pedro", "Ana", 
             "Carlos", "Juliana", 
-            "Lucas", "Camila", 
+            "Lucas", "Camila",  
             "Gabriel", "Larissa", 
             "Rafael", "Fernanda", 
             "Bruno", "Patrícia"];
@@ -67,22 +72,72 @@
 
             const gerentes = ["Jonny", "Sasha", "Oregon", "Asael", "Danny"];
 
-        function quadroDeTI(){
-            for (var i = 0; i < funcionariosTI.length; i++) {
-            document.getElementById("ti").textContent = i;
-            }
-        }
+            var conditions = null;
 
-        function quadroDeADM(){
-            for (let i = 0; i < funcionariosADM.length; i++) {
-                document.getElementById("adm").textContent = funcionariosADM[i] + "<br>";
+            switch (conditions) {
+                case 'ti':
+                for (var i = 0; i < funcionariosTI.length; i++){
+            document.getElementById("ti").style.backgroundColor = "black";
+            texto += "<li>" + funcionariosTI[i] + "</li>" + "<br>";
             }
+            texto += "</ul>";
+            document.getElementById("ti").innerHTML = texto;
+                    break;
+                case 'adm':
+                for (var i = 0; i < funcionariosADM.length; i++){
+            document.getElementById("adm").style.backgroundColor = "black";
+            texto += "<li>" + funcionariosADM[i] + "</li>" + "<br>";
         }
+            texto += "</ul>";
+            document.getElementById("adm").innerHTML = texto; 
+            }
+            
 
     </script>
 </body>
 </html>
 
-<!--<div id="adm"></div>
-    <div id="juridicos"></div>
-    <div id="gerentes"></div>-->
+<!--var texto = "<ul>";
+
+        function quadroDeTI(){
+            document.getElementById("adm").textContent = "";
+            document.getElementById("juridicos").textContent = "";
+            document.getElementById("gerentes").textContent = "";
+
+            for (var i = 0; i < funcionariosTI.length; i++){
+            document.getElementById("ti").style.backgroundColor = "black";
+            texto += "<li>" + funcionariosTI[i] + "</li>" + "<br>";
+        }
+            texto += "</ul>";
+            document.getElementById("ti").innerHTML = texto;
+        }
+
+        
+        
+        
+        function quadroDeADM(){
+            document.getElementById("ti").textContent = "";
+            document.getElementById("juridicos").textContent = "";
+            document.getElementById("gerentes").textContent = "";
+
+            for (var i = 0; i < funcionariosADM.length; i++){
+            document.getElementById("adm").style.backgroundColor = "black";
+            texto += "<li>" + funcionariosADM[i] + "</li>" + "<br>";
+        }
+            texto += "</ul>";
+            document.getElementById("adm").innerHTML = texto;
+        }
+
+
+        function quadroDeJuridicos(){
+            document.getElementById("ti").textContent = "";
+            document.getElementById("adm").textContent = "";
+            document.getElementById("gerentes").textContent = "";
+
+            for (var i = 0; i < funcionariosJuridicos.length; i++){
+            document.getElementById("juridicos").style.backgroundColor = "black";
+            texto += "<li>" + funcionariosJuridicos[i] + "</li>" + "<br>";
+        }
+            texto += "</ul>";
+            document.getElementById("juridicos").innerHTML = texto;
+        }-->
