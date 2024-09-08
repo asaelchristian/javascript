@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.13.3/dist/sweetalert2.min.css" rel="stylesheet">
     <title>Quadro dos funcionários e gerentes</title>
     <style>
         body{
@@ -12,156 +13,16 @@
             cursor: pointer;
             margin-bottom: 20px;
         }
-        div{
-            height: 900px;
-            width: 230px;
-            padding: 20px;
-            background-color: rgb(255, 255, 255);
-            color: white;
-            border-radius: 8px;
-            display: inline-block;
-        }
     </style>
 </head>
 <body>
     <h1>Organização dos funcionários e gerentes da Ford Brasil</h1>
 
-    <button onclick="quadrosDaEmpresa('ti')">Ver quadro dos funcionários do setor de TI</button>
-    <button onclick="quadrosDaEmpresa('adm')">Ver quadro dos funcionários do setor de Administração</button>
-    <button onclick="quadrosDaEmpresa('juridicos')">Ver quadro dos funcionários do setor Jurídico</button>
-    <button onclick="quadrosDaEmpresa('gerentes')"> Ver o quadro de gerentes</button>
- 
-
-    <div id="ti"></div>
-    <div id="adm"></div>
-    <div id="juridicos"></div>
-    <div id="gerentes"></div>
-    
-    
-    <script>
-        const funcionariosTI = [ 
-            "João", "Maria", 
-            "Pedro", "Ana", 
-            "Carlos", "Juliana", 
-            "Lucas", "Camila",  
-            "Gabriel", "Larissa", 
-            "Rafael", "Fernanda", 
-            "Bruno", "Patrícia"];
-
-        const funcionariosADM = [
-            "Daniel", "Carolina", 
-            "Gustavo", "Beatriz", 
-            "Felipe", "Gabriela", 
-            "Thiago", "Mariana", 
-            "Leonardo", "Renata", 
-            "Eduardo", "Vanessa", 
-            "Marcelo", "Bianca", 
-            "Ricardo", "Aline", 
-            "André", "Rafaela", 
-            "Rodrigo", "Priscila", 
-            "Alexandre", "Thaís", 
-            "Matheus", "Tatiana", 
-            "Vinícius", "Amanda", 
-            "Vitor", "Isabela"];
-
-            const funcionariosJuridicos = [ 
-            "Henrique", "Bruna", 
-            "Fábio", "Luísa", 
-            "Diego", "Débora", 
-            "Antônio", "Simone"];
-
-            const gerentes = ["Jonny", "Sasha", "Oregon", "Asael", "Danny"];
-
-            var texto = "<ul>";
-
-function quadroDeTI(){
-    document.getElementById("adm").textContent = "";
-    document.getElementById("juridicos").textContent = "";
-    document.getElementById("gerentes").textContent = "";
-
-    for (var i = 0; i < funcionariosTI.length; i++){
-    document.getElementById("ti").style.backgroundColor = "black";
-    texto += "<li>" + funcionariosTI[i] + "</li>" + "<br>";
-}
-    texto += "</ul>";
-    document.getElementById("ti").innerHTML = texto;
-}
-
-
-
-
-function quadroDeADM(){
-    document.getElementById("ti").textContent = "";
-    document.getElementById("juridicos").textContent = "";
-    document.getElementById("gerentes").textContent = "";
-
-    for (var i = 0; i < funcionariosADM.length; i++){
-    document.getElementById("adm").style.backgroundColor = "black";
-    texto += "<li>" + funcionariosADM[i] + "</li>" + "<br>";
-}
-    texto += "</ul>";
-    document.getElementById("adm").innerHTML = texto;
-}
-
-
-function quadroDeJuridicos(){
-    document.getElementById("ti").textContent = "";
-    document.getElementById("adm").textContent = "";
-    document.getElementById("gerentes").textContent = "";
-
-    for (var i = 0; i < funcionariosJuridicos.length; i++){
-    document.getElementById("juridicos").style.backgroundColor = "black";
-    texto += "<li>" + funcionariosJuridicos[i] + "</li>" + "<br>";
-}
-    texto += "</ul>";
-    document.getElementById("juridicos").innerHTML = texto;
-}            
-
-    </script>
+    <button onclick="TI()">Ver quadro dos funcionários do setor de TI</button>
+    <button onclick="ADM()">Ver quadro dos funcionários do setor de Administração</button>
+    <button onclick="Juridicos()">Ver quadro dos funcionários do setor Jurídico</button>
+    <button onclick="Gerentes()"> Ver o quadro de gerentes</button>
+<script src="alerts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.13.3/dist/sweetalert2.all.min.js"></script>
 </body>
 </html>
-
-<!--var texto = "<ul>";
-
-        function quadroDeTI(){
-            document.getElementById("adm").textContent = "";
-            document.getElementById("juridicos").textContent = "";
-            document.getElementById("gerentes").textContent = "";
-
-            for (var i = 0; i < funcionariosTI.length; i++){
-            document.getElementById("ti").style.backgroundColor = "black";
-            texto += "<li>" + funcionariosTI[i] + "</li>" + "<br>";
-        }
-            texto += "</ul>";
-            document.getElementById("ti").innerHTML = texto;
-        }
-
-        
-        
-        
-        function quadroDeADM(){
-            document.getElementById("ti").textContent = "";
-            document.getElementById("juridicos").textContent = "";
-            document.getElementById("gerentes").textContent = "";
-
-            for (var i = 0; i < funcionariosADM.length; i++){
-            document.getElementById("adm").style.backgroundColor = "black";
-            texto += "<li>" + funcionariosADM[i] + "</li>" + "<br>";
-        }
-            texto += "</ul>";
-            document.getElementById("adm").innerHTML = texto;
-        }
-
-
-        function quadroDeJuridicos(){
-            document.getElementById("ti").textContent = "";
-            document.getElementById("adm").textContent = "";
-            document.getElementById("gerentes").textContent = "";
-
-            for (var i = 0; i < funcionariosJuridicos.length; i++){
-            document.getElementById("juridicos").style.backgroundColor = "black";
-            texto += "<li>" + funcionariosJuridicos[i] + "</li>" + "<br>";
-        }
-            texto += "</ul>";
-            document.getElementById("juridicos").innerHTML = texto;
-        }-->
