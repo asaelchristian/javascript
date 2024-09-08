@@ -72,26 +72,50 @@
 
             const gerentes = ["Jonny", "Sasha", "Oregon", "Asael", "Danny"];
 
-            var conditions = null;
+            var texto = "<ul>";
 
-            switch (conditions) {
-                case 'ti':
-                for (var i = 0; i < funcionariosTI.length; i++){
-            document.getElementById("ti").style.backgroundColor = "black";
-            texto += "<li>" + funcionariosTI[i] + "</li>" + "<br>";
-            }
-            texto += "</ul>";
-            document.getElementById("ti").innerHTML = texto;
-                    break;
-                case 'adm':
-                for (var i = 0; i < funcionariosADM.length; i++){
-            document.getElementById("adm").style.backgroundColor = "black";
-            texto += "<li>" + funcionariosADM[i] + "</li>" + "<br>";
-        }
-            texto += "</ul>";
-            document.getElementById("adm").innerHTML = texto; 
-            }
-            
+function quadroDeTI(){
+    document.getElementById("adm").textContent = "";
+    document.getElementById("juridicos").textContent = "";
+    document.getElementById("gerentes").textContent = "";
+
+    for (var i = 0; i < funcionariosTI.length; i++){
+    document.getElementById("ti").style.backgroundColor = "black";
+    texto += "<li>" + funcionariosTI[i] + "</li>" + "<br>";
+}
+    texto += "</ul>";
+    document.getElementById("ti").innerHTML = texto;
+}
+
+
+
+
+function quadroDeADM(){
+    document.getElementById("ti").textContent = "";
+    document.getElementById("juridicos").textContent = "";
+    document.getElementById("gerentes").textContent = "";
+
+    for (var i = 0; i < funcionariosADM.length; i++){
+    document.getElementById("adm").style.backgroundColor = "black";
+    texto += "<li>" + funcionariosADM[i] + "</li>" + "<br>";
+}
+    texto += "</ul>";
+    document.getElementById("adm").innerHTML = texto;
+}
+
+
+function quadroDeJuridicos(){
+    document.getElementById("ti").textContent = "";
+    document.getElementById("adm").textContent = "";
+    document.getElementById("gerentes").textContent = "";
+
+    for (var i = 0; i < funcionariosJuridicos.length; i++){
+    document.getElementById("juridicos").style.backgroundColor = "black";
+    texto += "<li>" + funcionariosJuridicos[i] + "</li>" + "<br>";
+}
+    texto += "</ul>";
+    document.getElementById("juridicos").innerHTML = texto;
+}            
 
     </script>
 </body>
