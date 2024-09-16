@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Even numbers</title>
+    <style>
+        body{
+            background-image: radial-gradient(orange, yellow 30%, black 50%);
+            background-attachment: fixed;
+        }
+    </style>
 </head>
 <body>
     <script>
@@ -13,9 +19,8 @@
         for (let index = 0; index < array.length; index++) {
             if (array[index] % 2 == 0) {
                 console.log(array[index]);
-                soma = soma + array[index];
-                
-                alert(soma);
+                soma += array[index];
+                console.log(soma);
             }
             
         }
