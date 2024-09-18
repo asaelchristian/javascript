@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop</title>
+    <style>
+        #results{
+            width: 300px;
+            height: 200px;
+            margin-top: 20px;
+            color: white;
+            padding: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="laptopInformation()">See about the laptop</button>
+    <button onclick="buyLaptop()">Buy Laptop</button>
+    <div id="results"></div>
+
+    <script>
+       function laptopInformation(){
+       document.getElementById("results").style.backgroundColor = "black";
+
+        var laptop = new Object();
+        
+            laptop.name = "SamsumgXML";
+            laptop.amountAvalible = "30 units";
+            laptop.price = "US$ 6000";
+
+            var message = "";
+
+            message += "Name: " + laptop.name  +  "<br>" + "<br>";
+            message += "Amount Avalible: " + laptop.amountAvalible + "<br>" + "<br>";
+            message += "Price: " + laptop.price;
+
+        document.getElementById("results").innerHTML = message;
+   }
+    </script>
+</body>
+</html>
