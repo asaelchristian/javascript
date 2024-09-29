@@ -24,17 +24,13 @@
        function laptopInformation(){
        document.getElementById("results").style.backgroundColor = "black";
 
-        var laptop = new Object();
-        
-            laptop.name = "SamsumgXML";
-            laptop.amountAvalible = "30 units";
-            laptop.price = "US$ 6000";
+       const laptop = {laptopName: "SamsumgXML", laptopAmountAvalible: "30 units", laptopPrice: "US$ 6000"};
 
             var message = "";
 
-            message += "Name: " + laptop.name  +  "<br>" + "<br>";
-            message += "Amount Avalible: " + laptop.amountAvalible + "<br>" + "<br>";
-            message += "Price: " + laptop.price;
+            message += "Name: " + laptop.laptopName  +  "<br>" + "<br>";
+            message += "Amount Avalible: " + laptop.laptopAmountAvalible + "<br>" + "<br>";
+            message += "Price: " + laptop.laptopPrice;
 
         document.getElementById("results").innerHTML = message;
    }
