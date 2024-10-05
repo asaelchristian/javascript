@@ -16,24 +16,44 @@
     </style>
 </head>
 <body>
-    <button onclick="laptopInformation()">See about the laptop</button>
+    <button onclick="computerInformation()">See about the laptop</button>
     <button onclick="buyLaptop()">Buy Laptop</button>
     <div id="results"></div>
 
-    <script>
-       function laptopInformation(){
-       document.getElementById("results").style.backgroundColor = "black";
 
-       const laptop = {laptopName: "SamsumgXML", laptopAmountAvalible: "30 units", laptopPrice: "US$ 6000"};
+<script>
+     function computerInformation(){
+        document.getElementById("results").style.backgroundColor = "black";
+        
+        const laptop = {
+            name: "SamsumgXML",
+            amountAvailable: 30,
+            price: "US$ " + 6000,
+        }
+        
 
-            var message = "";
+        laptop.purchase = function(){
+            console.log("You bought a laptop!");
+        }
 
-            message += "Name: " + laptop.laptopName  +  "<br>" + "<br>";
-            message += "Amount Avalible: " + laptop.laptopAmountAvalible + "<br>" + "<br>";
-            message += "Price: " + laptop.laptopPrice;
+        var message = "";
+
+        message += "Name: " + laptop.name + "<br><br>";
+        message += "Amount Available: " + laptop.amountAvailable + "<br><br>";  // Use the correct property
+        message += "Price: " + laptop.price;
 
         document.getElementById("results").innerHTML = message;
-   }
-    </script>
+
+     }
+</script>
 </body>
 </html>
+
+<!--
+
+    const laptop = {name: "SamsumgXML", 
+            amountAvalible: 30 + " units", 
+            price: "US$ " + 6000,
+            };   
+Avalible
+       -->
