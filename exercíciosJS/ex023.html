@@ -10,41 +10,44 @@
             height: 200px;
             margin-top: 20px;
             color: white;
+            background-color: black;
             padding: 10px;
             font-family: Arial, Helvetica, sans-serif;
         }
     </style>
 </head>
 <body>
-    <button onclick="computerInformation()">See about the laptop</button>
-    <button onclick="buyLaptop()">Buy Laptop</button>
+    <button>See about the laptop</button>
+    <button>Buy Laptop</button>
     <div id="results"></div>
 
 
 <script>
-     function computerInformation(){
-        document.getElementById("results").style.backgroundColor = "black";
-        
         const laptop = {
             name: "SamsumgXML",
             amountAvailable: 30,
             price: "US$ " + 6000,
         }
-        
 
-        laptop.purchase = function(){
-            console.log("You bought a laptop!");
+        laptop.purchase = function(amount){
+            if(!amount){
+                amount == 1;
+                this.amountAvailable--;
+                console.log(this.amountAvailable);
+            }
+            else{
+                this.amountAvailable -= amount;
+                console.log(this.amountAvailable);
+            }
         }
 
         var message = "";
 
         message += "Name: " + laptop.name + "<br><br>";
-        message += "Amount Available: " + laptop.amountAvailable + "<br><br>";  // Use the correct property
+        message += "Amount Available: " + laptop.amountAvailable + "<br><br>";
         message += "Price: " + laptop.price;
 
         document.getElementById("results").innerHTML = message;
-
-     }
 </script>
 </body>
 </html>

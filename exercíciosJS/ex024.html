@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producs</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="output"></div>
+    
+    <script>
+        const products = [
+            {name: "Laptop", amountAvalible: 30, price: 8000},
+            {name: "Table", amountAvalible: 357, price: 1200},
+            {name: "Mouse", amountAvalible: 695, price: 400}
+        ]
+
+        for (var i = 0; i < products.length; i++) {
+            console.log(products[i]);   
+        }
+
+        var screen1 = "";
+        var screen2 = "";
+        var screen3 = "";
+
+        screen1 = "<strong>Name:</strong> " + products[0].name + "<br> <br>" + "<strong>Amount Avalible:</strong> " + products[0].amountAvalible + "<br> <br>" + "<strong>Price:</strong> " + products[0].price;  
+        
+        screen2 = "<strong>Name:</strong> " + products[1].name + "<br> <br>" + "<strong>Amount Avalible:</strong> " + products[1].amountAvalible + "<br> <br>" + "<strong>Price:</strong> " + products[1].price;
+
+        screen3 = "<strong>Name:</strong> " + products[2].name + "<br> <br>" + "<strong>Amount Avalible:</strong> " + products[2].amountAvalible + "<br> <br>" + "<strong>Price:</strong> " + products[2].price;
+
+        document.getElementById("output").innerHTML = screen1 + "<br> <br> <br>" + "<hr>" + "<br>" + screen2 + "<br> <br> <br>" + "<hr>" + "<br>" + screen3;
+    </script>
+</body>
+</html>
